@@ -1,0 +1,76 @@
+{
+  "name": "react-native-monorepo-tools",
+  "version": "1.0.0",
+  "description": "Tools and utils to support a React Native monorepo built with Yarn Workspaces",
+  "main": "src/index.js",
+  "files": ["src/"],
+  "keywords": [
+    "react",
+    "native",
+    "react-native",
+    "monorepo",
+    "yarn",
+    "workspaces"
+  ],
+  "author": "Mazzarolo Matteo",
+  "license": "ISC",
+  "homepage": "https://github.com/mmazzarolo/react-native-monorepo-tools",
+  "repository": {
+    "type": "git",
+    "url": "https://github.com/mmazzarolo/react-native-monorepo-tools"
+  },
+  "scripts": {
+    "lint": "eslint ./",
+    "lint:fix": "yarn -- --fix",
+    "test": "jest",
+    "test:coverage": "yarn test -- --coverage",
+    "test:watch": "yarn test -- --watch",
+    "prepare": "husky install"
+  },
+  "devDependencies": {
+    "@semantic-release/changelog": "^5.0.1",
+    "@semantic-release/git": "^9.0.1",
+    "eslint": "^7.32.0",
+    "eslint-config-prettier": "^8.3.0",
+    "eslint-plugin-jest": "^24.4.2",
+    "husky": "^7.0.2",
+    "jest": "^27.2.0",
+    "lint-staged": "^11.1.2",
+    "prettier": "^2.4.1",
+    "semantic-release": "^17.4.7"
+  },
+  "eslintConfig": {
+    "extends": [
+      "eslint:recommended",
+      "plugin:jest/recommended",
+      "plugin:prettier/recommended"
+    ],
+    "parserOptions": {
+      "ecmaVersion": 9,
+      "sourceType": "module"
+    },
+    "env": {
+      "node": true,
+      "es6": true,
+      "commonjs": true
+    }
+  },
+  "lint-staged": {
+    "*.{js,jsx}": [
+      "yarn lint:fix"
+    ],
+    "*.md": [
+      "prettier --write"
+    ]
+  },
+  "release": {
+    "plugins": [
+      "@semantic-release/commit-analyzer",
+      "@semantic-release/release-notes-generator",
+      "@semantic-release/npm",
+      "@semantic-release/github",
+      "@semantic-release/changelog",
+      "@semantic-release/git"
+    ]
+  }
+}
