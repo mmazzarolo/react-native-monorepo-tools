@@ -39,7 +39,7 @@ module.exports = function getMetroConfig(params = {}) {
     const regexSafeNohoistLibName = nohoistLibName.replace("/", "\\/");
     blockList.push(
       new RegExp(
-        `^((?!${currentWorkspaceName}).)*\\/node_modules\\/${nohoistLibName}\\/.*$`
+        `^((?!${currentWorkspaceName}).)*\\/node_modules\\/${regexSafeNohoistLibName}\\/.*$`
       )
     );
   });

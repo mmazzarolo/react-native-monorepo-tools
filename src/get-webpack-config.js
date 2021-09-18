@@ -9,7 +9,7 @@ const getNohoist = require("./get-nohoist");
 /**
  * Return a (partial) Webpack configuration compatible with Yarn workspaces.
  * @param {object} params - Input parameters
- * @param {string} [params.cwd] - Current working dir (defaults to process.cwd()). 
+ * @param {string} [params.cwd] - Current working dir (defaults to process.cwd()).
  * @returns {MonorepoWebpackConfig} Webpack config for this monorepo.
  */
 module.exports = function getWebpackConfig(params = {}) {

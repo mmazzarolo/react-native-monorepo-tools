@@ -46,9 +46,9 @@
   },
   "eslintConfig": {
     "extends": [
+      "prettier",
       "eslint:recommended",
-      "plugin:jest/recommended",
-      "plugin:prettier/recommended"
+      "plugin:jest/recommended"
     ],
     "parserOptions": {
       "ecmaVersion": 9,
