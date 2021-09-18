@@ -15,7 +15,7 @@
     "workspaces"
   ],
   "author": "Mazzarolo Matteo",
-  "license": "ISC",
+  "license": "AGPL-3.0",
   "homepage": "https://github.com/mmazzarolo/react-native-monorepo-tools",
   "repository": {
     "type": "git",
