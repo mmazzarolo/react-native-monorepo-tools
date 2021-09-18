@@ -1,9 +1,11 @@
 {
   "name": "react-native-monorepo-tools",
   "version": "1.0.0",
-  "description": "Tools and utils to support a React Native monorepo built with Yarn Workspaces",
+  "description": "Tools to support a Yarn workspaces' React Native monorepo",
   "main": "src/index.js",
-  "files": ["src/"],
+  "files": [
+    "src/"
+  ],
   "keywords": [
     "react",
     "native",
@@ -18,6 +20,9 @@
   "repository": {
     "type": "git",
     "url": "https://github.com/mmazzarolo/react-native-monorepo-tools"
+  },
+  "engines": {
+    "node": ">=11.0.0"
   },
   "scripts": {
     "lint": "eslint ./",
@@ -72,5 +77,9 @@
       "@semantic-release/changelog",
       "@semantic-release/git"
     ]
+  },
+  "dependencies": {
+    "find-root": "^1.1.0",
+    "glob": "^7.1.7"
   }
 }

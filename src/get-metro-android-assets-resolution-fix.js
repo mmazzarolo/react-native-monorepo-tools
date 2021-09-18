@@ -1,19 +1,32 @@
-// Unfortunately, there's an issue with assets resolution on android when 
+// Unfortunately, there's an issue with assets resolution on android when
 // importing assets from paths outside of the project's root directory.
 // To fix it, we can patch metro's `publicPath` and `enhanceMiddleware` to
 // allow reading from `n` depths below the project directory.
-// For our use case, "4" is enough (to account for `../core/src`) but you might 
-// wanna bump it up if you need to shuffle the assets location.  
-// For more info, see this metro comment: 
+// For our use case, "4" is enough (to account for `../core/src`) but you might
+// wanna bump it up if you need to shuffle the assets location.
+// For more info, see this metro comment:
 // https://github.com/facebook/metro/issues/290#issuecomment-543746458
-function getMetroAndroidAssetsResolutionFix(params = {}) {
+
+/**
+ * @typedef {Object} MetroAndroidAssetFix
+ * @prop {string} publicPath - Metro's `publicPath`.
+ * @prop {function} applyMiddleware - Function that applies the patch middleware to metro.
+ */
+
+/**
+ * Return the Metro Android assets resolution fix.
+ * @param {object} params - Input parameters
+ * @param {number} [params.depth = 4] - `n` depth below the project directory.
+ * @returns {MetroAndroidAssetFix} Metro Android assets resolution fix.
+ */
+module.exports = function getMetroAndroidAssetsResolutionFix(params = {}) {
   const { depth = 4 } = params;
-  let publicPath = generateAssetsPath(depth, 'dir');
+  let publicPath = generateAssetsPath(depth, "dir");
   const applyMiddleware = (middleware) => {
     return (req, res, next) => {
       for (let currentDepth = depth; currentDepth >= 0; currentDepth--) {
-        const pathToReplace = generateAssetsPath(currentDepth, 'dir');
-        const replacementPath = generateAssetsPath(depth - currentDepth, '..');
+        const pathToReplace = generateAssetsPath(currentDepth, "dir");
+        const replacementPath = generateAssetsPath(depth - currentDepth, "..");
         if (currentDepth === depth) {
           publicPath = pathToReplace;
         }
@@ -27,18 +40,14 @@ function getMetroAndroidAssetsResolutionFix(params = {}) {
   };
   return {
     publicPath,
-    applyMiddleware
-  }
-}
+    applyMiddleware,
+  };
+};
 
-function generateAssetsPath (depth, subpath) {
+function generateAssetsPath(depth, subpath) {
   return `/assets`.concat(
     Array.from({ length: depth })
       .map(() => `/${subpath}`)
       .join("")
   );
-}
-
-module.exports = {
-  getMetroAndroidAssetsResolutionFix
 }
