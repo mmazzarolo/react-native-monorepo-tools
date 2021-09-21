@@ -12,7 +12,7 @@ const getWorkspaces = require("./get-workspaces");
  */
 
 /**
- * Return a (partial) Metro configuration to make it compatible with Yarn workspaces.
+ * Return Metro tools to make it compatible with Yarn workspaces.
  * @param {object} params - Input parameters
  * @param {string} [params.cwd] - Current working dir (defaults to process.cwd()). 
  * @param {string} [params.reactNativeAlias] - Alias for the react-native lib (e.g., react-native-macos).
