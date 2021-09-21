@@ -47,6 +47,7 @@ console.log(metroTools.extraNodeModules);
 //     "react": "/Users/me/my-monorepo/packages/workspace-a/node_modules/react",
 //     "react-native": "/Users/me/my-monorepo/packages/workspace-a/node_modules/react-native"
 //   }
+
 ```
 
 #### Available params:
