@@ -1,3 +1,10 @@
+# [1.1.0](https://github.com/mmazzarolo/react-native-monorepo-tools/compare/v1.0.0...v1.1.0) (2021-09-21)
+
+
+### Features
+
+* Fix previous feature release ([#4](https://github.com/mmazzarolo/react-native-monorepo-tools/issues/4)) ([e8900e8](https://github.com/mmazzarolo/react-native-monorepo-tools/commit/e8900e8b1d2c25b919909d8d2af7ed446a86f783))
+
 # 1.0.0 (2021-09-21)
 
 
