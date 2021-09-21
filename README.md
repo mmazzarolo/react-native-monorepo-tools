@@ -89,8 +89,8 @@ console.log(webpackTools.enableWorkspacesResolution(webpackConfig));
 
 #### Output:
 
-- `enableWorkspacesResolution`: Allow importing from external workspaces.
-- `addNohoistAliases`: Ensure nohoisted libraries are resolved from this workspace.
+- `enableWorkspacesResolution(webpackConfig)`: Updates a webpack config to allow importing from external workspaces.
+- `addNohoistAliases(webpackConfig)`: Updates a webpack config to ensure nohoisted libraries are resolved from this workspace.
 
 ### `getMetroAndroidAssetsResolutionFix(params: Object): Object`
 
