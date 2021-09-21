@@ -18,31 +18,31 @@ yarn add -D react-native-monorepo-tools
 
 ## Tools for making React Native codebases compatible with Yarn Workspaces
 
-### `getMetroConfig(params: Object): Object`
+### `getMetroTools(params: Object): Object`
 
-Return a (partial) [Metro](https://facebook.github.io/metro/) configuration to make it compatible with Yarn workspaces.
+Return [Metro](https://facebook.github.io/metro/) tools to make it compatible with Yarn workspaces.
 
 #### Usage:
 
 ```js
-const { getMetroConfig } = require("react-native-monorepo-tools");
+const { getMetroTools } = require("react-native-monorepo-tools");
 
-const metroConfig = getMetroConfig();
+const metroTools = getMetroTools();
 
-console.log(metroConfig.watchFolders);
+console.log(metroTools.watchFolders);
 // ↪ [
 //    "/Users/me/my-monorepo/node_modules/"
 //    "/Users/me/my-monorepo/packages/workspace-a/",
 //    "/Users/me/my-monorepo/packages/workspace-b",
 //   ]
 
-console.log(metroConfig.blockList);
+console.log(metroTools.blockList);
 // ↪ [
 //     /^((?!workspace-a).)*\/node_modules\/react\/.*$/,
 //     /^((?!workspace-a).)*\/node_modules\/react-native\/.*$/,
 //   ]
 
-console.log(metroConfig.extraNodeModules);
+console.log(metroTools.extraNodeModules);
 // ↪ {
 //     "react": "/Users/me/my-monorepo/packages/workspace-a/node_modules/react",
 //     "react-native": "/Users/me/my-monorepo/packages/workspace-a/node_modules/react-native"
@@ -61,21 +61,26 @@ console.log(metroConfig.extraNodeModules);
 - `blockList`: List of regexes resolving to paths ignored by metro.
 - `extraNodeModules`: List of required modules outside of the workspace directory.
 
-### `getWebpackConfig(params: Object): Object`
+### `getWebpackTools(params: Object): Object`
 
-Return a (partial) Webpack configuration compatible with Yarn workspaces.
+Return Webpack tools to make it compatible with Yarn workspaces.
 
 #### Usage:
 
 ```js
-const { getWebpackConfig } = require("react-native-monorepo-tools");
+const { getWebpackTools } = require("react-native-monorepo-tools");
+const webpackConfig = require('./webpack.config.js')
 
-const webpackConfig = getWebpackConfig();
+const webpackTools = getWebpackTools();
 
-console.log(webpackConfig.alias);
-// ↪ {
+console.log(webpackTools.addNohoistAliases(webpackConfig));
+// ↪ alias: {
+//     "react": "/Users/me/my-monorepo/packages/workspace-a/node_modules/react"
 //     "react-native": "/Users/me/my-monorepo/packages/workspace-a/node_modules/react-native-web"
 //   }
+
+console.log(webpackTools.enableWorkspacesResolution(webpackConfig));
+// ↪ adds to babel-loader each workspace
 ```
 
 #### Available params:
@@ -84,7 +89,8 @@ console.log(webpackConfig.alias);
 
 #### Output:
 
-- `alias`: React Native web alias mapping (`react-native` → `react-native-web`).
+- `enableWorkspacesResolution`: Allow importing from external workspaces.
+- `addNohoistAliases`: Ensure nohoisted libraries are resolved from this workspace.
 
 ### `getMetroAndroidAssetsResolutionFix(params: Object): Object`
 
