@@ -46,8 +46,8 @@ module.exports = function getNohoist(params = {}) {
     })
     .flat(2)
     .map((nohoistPath) => {
-      if(process.platform == "win32" && libNamesOnly){
-        nohoistPath = nohoistPath.replace(/\\/g,"/");
+      if (process.platform === "win32" && libNamesOnly) {
+        nohoistPath = nohoistPath.replace(/\\/g, "/");
       }
       return libNamesOnly
         ? nohoistPath.substring(
