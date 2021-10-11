@@ -1,3 +1,10 @@
+## [1.1.1](https://github.com/mmazzarolo/react-native-monorepo-tools/compare/v1.1.0...v1.1.1) (2021-10-11)
+
+
+### Bug Fixes
+
+* solve nohoist windows path backslash issue ([#6](https://github.com/mmazzarolo/react-native-monorepo-tools/issues/6)) ([8aa1368](https://github.com/mmazzarolo/react-native-monorepo-tools/commit/8aa13682cf5b3af67099f25666869e2a00dc00e6))
+
 # [1.1.0](https://github.com/mmazzarolo/react-native-monorepo-tools/compare/v1.0.0...v1.1.0) (2021-09-21)
 
 
