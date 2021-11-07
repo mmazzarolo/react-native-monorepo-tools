@@ -1,3 +1,10 @@
+## [1.1.2](https://github.com/mmazzarolo/react-native-monorepo-tools/compare/v1.1.1...v1.1.2) (2021-11-07)
+
+
+### Bug Fixes
+
+* Update get-workspaces to return OS specific paths ([#8](https://github.com/mmazzarolo/react-native-monorepo-tools/issues/8)) ([714fd0c](https://github.com/mmazzarolo/react-native-monorepo-tools/commit/714fd0cd6b7642a9938380212c31d0568855c433))
+
 ## [1.1.1](https://github.com/mmazzarolo/react-native-monorepo-tools/compare/v1.1.0...v1.1.1) (2021-10-11)
 
 
