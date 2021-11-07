@@ -17,7 +17,7 @@ module.exports = function getWorkspaces(params = {}) {
     : packageJson.workspaces.packages;
   return workspaceGlobs
     .map((workspaceGlob) => {
-      return glob.sync(path.join(monorepoRoot, `${workspaceGlob}/`));
+      return glob.sync(path.join(monorepoRoot, `${workspaceGlob}/`), { realpath: true });
     })
     .flat();
 };
