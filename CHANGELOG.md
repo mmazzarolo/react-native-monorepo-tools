@@ -1,3 +1,10 @@
+## [1.1.3](https://github.com/mmazzarolo/react-native-monorepo-tools/compare/v1.1.2...v1.1.3) (2021-11-08)
+
+
+### Bug Fixes
+
+* Fix error when nohoist is not defined ([#10](https://github.com/mmazzarolo/react-native-monorepo-tools/issues/10)) ([ffef661](https://github.com/mmazzarolo/react-native-monorepo-tools/commit/ffef6616dc00d57baebca57fc92bb832fdab4178))
+
 ## [1.1.2](https://github.com/mmazzarolo/react-native-monorepo-tools/compare/v1.1.1...v1.1.2) (2021-11-07)
 
 
