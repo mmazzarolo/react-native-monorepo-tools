@@ -1,3 +1,10 @@
+## [1.1.4](https://github.com/mmazzarolo/react-native-monorepo-tools/compare/v1.1.3...v1.1.4) (2021-12-31)
+
+
+### Bug Fixes
+
+* Added safety check on `rule.loader` access ([#11](https://github.com/mmazzarolo/react-native-monorepo-tools/issues/11)) ([413b86f](https://github.com/mmazzarolo/react-native-monorepo-tools/commit/413b86f7d03a0f489b4f6dcac21c5d8bb6172bc1))
+
 ## [1.1.3](https://github.com/mmazzarolo/react-native-monorepo-tools/compare/v1.1.2...v1.1.3) (2021-11-08)
 
 
