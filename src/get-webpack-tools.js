@@ -41,7 +41,7 @@ module.exports = function getWebpackTools(params = {}) {
   const workspaces = getWorkspaces({ cwd });
   function enableWorkspacesResolution(webpackConfig) {
     const babelLoader = webpackConfig.module.rules[1].oneOf.find((rule) =>
-      rule.loader.includes("babel-loader")
+      rule.loader && rule.loader.includes("babel-loader")
     );
     babelLoader.include = Array.isArray(babelLoader.include)
       ? babelLoader.include
