@@ -24,8 +24,18 @@ module.exports = function getNohoist(params = {}) {
     : getWorkspaces({ cwd });
   const monorepoRoot = getMonorepoRoot({ cwd });
   const packageJson = require(path.join(monorepoRoot, "package.json"));
-  const nohoistGlobs = [...(packageJson.workspaces.nohoist || []), 
-    ...((require(path.join(cwd, "package.json")).workspaces || {}).nohoist || [])];
+  const nohoistGlobs = packageJson.workspaces.nohoist || [];
+
+  // Also add nohoist values of "workspaces.nohoist" of the current workspace'
+  // package.json (if any). 
+  const currentWorkspacePackageJson = require(path.join(cwd, "package.json"));
+  if (
+    currentWorkspacePackageJson &&
+    currentWorkspacePackageJson.workspaces &&
+    currentWorkspacePackageJson.workspaces.nohoist
+  ) {
+    nohoistGlobs.push(...currentWorkspacePackageJson.workspaces.nohoist);
+  }
 
   return nohoistGlobs
     .map((nohoistGlob) =>
