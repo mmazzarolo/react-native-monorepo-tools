@@ -1,3 +1,10 @@
+# [1.2.0](https://github.com/mmazzarolo/react-native-monorepo-tools/compare/v1.1.4...v1.2.0) (2022-06-24)
+
+
+### Features
+
+* 🐛 support nohoist in package config ([#13](https://github.com/mmazzarolo/react-native-monorepo-tools/issues/13)) ([409c800](https://github.com/mmazzarolo/react-native-monorepo-tools/commit/409c80067cd371036efabb9e7d32bc536c9308d7))
+
 ## [1.1.4](https://github.com/mmazzarolo/react-native-monorepo-tools/compare/v1.1.3...v1.1.4) (2021-12-31)
 
 
