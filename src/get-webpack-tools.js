@@ -41,7 +41,7 @@ module.exports = function getWebpackTools(params = {}) {
   const workspaces = getWorkspaces({ cwd });
   function enableWorkspacesResolution(webpackConfig) {
     var targetIndex = 1;
-    if (webpackConfig.module.rules.length == 1) {
+    if (webpackConfig.module.rules.length === 1) {
       targetIndex = 0; // CRACO 7 / CRA 5 has only one rule
     }
 
