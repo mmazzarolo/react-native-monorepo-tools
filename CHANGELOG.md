@@ -1,3 +1,10 @@
+## [1.2.1](https://github.com/mmazzarolo/react-native-monorepo-tools/compare/v1.2.0...v1.2.1) (2022-12-09)
+
+
+### Bug Fixes
+
+* Add support for CRACO 7 and CRA 5 ([1431875](https://github.com/mmazzarolo/react-native-monorepo-tools/commit/1431875a999ce710c3c208cc8c3544f88ad2b14f))
+
 # [1.2.0](https://github.com/mmazzarolo/react-native-monorepo-tools/compare/v1.1.4...v1.2.0) (2022-06-24)
 
 
